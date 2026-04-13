@@ -1,0 +1,16 @@
+{
+  "name": "secure-page-55892",
+  "version": "1.0.0",
+  "description": "Meta Help Center secure page",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Build completed'",
+    "dev": "echo 'Development server not configured'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/speed-insights": "^1.1.0"
+  }
+}
